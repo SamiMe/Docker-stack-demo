@@ -40,11 +40,11 @@ services:
   portainer:
     image: portainer/portainer
     ports:
-      - "9001"
+      - 9080:9000
     networks:
       - frontend
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "/var/run/docker.sock:/var/run/docker.sock"
     deploy:
       mode: replicated
       replicas: 1
